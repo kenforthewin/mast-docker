@@ -74,7 +74,6 @@ services:
 
 
   streaming:
-    build: .
     image: tootsuite/mastodon
     restart: always
     env_file: .env.production
@@ -92,7 +91,6 @@ services:
       - redis
 
   sidekiq:
-    build: .
     image: tootsuite/mastodon
     restart: always
     env_file: .env.production
