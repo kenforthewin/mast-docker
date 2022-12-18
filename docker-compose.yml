@@ -3,8 +3,6 @@ services:
   db:
     image: gcr.io/cloudsql-docker/gce-proxy:1.11
     env_file: .env.production
-    environment:
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - $PWD/cloudsql:/cloudsql
       - $PWD/db-key.json:/config
@@ -55,7 +53,6 @@ services:
   #     - '127.0.0.1:9200:9200'
 
   web:
-    build: .
     image: tootsuite/mastodon
     restart: always
     command: bash -c "rm -f /mastodon/tmp/pids/server.pid; bundle exec rails s -p 3000"
