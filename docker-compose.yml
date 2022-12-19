@@ -70,8 +70,12 @@ services:
       # - es
     volumes:
       - ./public/system:/mastodon/public/system
+    environment:
+      - PORT=3000
+      - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
     env_file: .env.production
-
 
   streaming:
     image: tootsuite/mastodon
