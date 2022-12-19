@@ -10,7 +10,8 @@ services:
       - /cloud_sql_proxy
       - -instances=react-rails-auth:us-east1:scalr3-east=tcp:0.0.0.0:5432
       - -credential_file=/config
-
+    networks:
+      - internal_network
   redis:
     restart: always
     image: redis:7-alpine
