@@ -1,1 +1,21 @@
 .env*
+
+# Ignore postgres + redis + elasticsearch volume optionally created by docker-compose
+/postgres
+/postgres14
+/redis
+/elasticsearch
+
+/public/system
+/public/assets
+/public/packs
+/public/packs-test
+
+/tmp
+
+/log/*
+!/log/.keep
+
+/cloudsql
+
+db-key.json
